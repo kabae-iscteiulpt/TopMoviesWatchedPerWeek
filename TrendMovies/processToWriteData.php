@@ -37,7 +37,7 @@
 
 <?php
 
-include 'database.php';
+include_once 'database.php';
 
 $date=@$_REQUEST['data'];
 if(!isset($date)){
