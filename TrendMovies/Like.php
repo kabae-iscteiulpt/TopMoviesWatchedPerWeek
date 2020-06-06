@@ -3,8 +3,8 @@
 include_once 'database.php';
 
 $id_movie=@$_REQUEST['id_movie'];
-//echo $id_movie;
 
+//statement to insert into table liked_movie the two data
 $statement = "INSERT INTO liked_movie(id_movie,ip_user) 
 VALUES(:id_movie,:ip_user)";
 
@@ -13,8 +13,9 @@ VALUES(:id_movie,:ip_user)";
 
 $ipAddressOfUser=$_SERVER['REMOTE_ADDR'];
 
-echo "the movie the id: ".$id_movie." get like from user of ip_address: ".$ipAddressOfUser;
- /*   try {      
+echo "The movie the id: ".$id_movie." get like from user of ip_address: ".$ipAddressOfUser;
+
+   try {      
         
         $stm = $conn->prepare($statement);
     
@@ -27,5 +28,5 @@ echo "the movie the id: ".$id_movie." get like from user of ip_address: ".$ipAdd
     } catch(PDOException $e) {
         echo "ERROOO: ".$e->getMessage()."<br>";
     }
-*/
+
 ?>

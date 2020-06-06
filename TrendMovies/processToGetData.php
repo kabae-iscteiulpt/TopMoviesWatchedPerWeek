@@ -8,8 +8,11 @@ echo "################################################";
 
 // API
 $url = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=7e55536303c36aa930f747c1534556cf";
+
+//to get the data from api
 $movies = json_decode(file_get_contents($url));
 
+//statment used to insert into table moviesofweek
 $statement = "INSERT INTO moviesofweek(id_movie,title, popularity,vote_count,poster_path,Date_Of_read,position_in_week) 
 VALUES(:id_movie,:title, :popularity, :vote_count,:poster_path, :Date_Of_read, :position_in_week)";
 
@@ -21,7 +24,6 @@ VALUES(:id_movie,:title, :popularity, :vote_count,:poster_path, :Date_Of_read, :
 $data_initial = new DateTime('2020-05-24');
 $date_actual = new DateTime();
 $interval = $data_initial->diff($date_actual);
-$id=0;
 
 
 

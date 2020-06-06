@@ -29,12 +29,15 @@
 </style>
 </head>
 <body>
+
 <div class="jumbotron text-center">
   <h1>Movies Of Week</h1>
   <p>Below we have the 20 most watched movies per week:</p> 
 </div>
+
 <?php
-include_once 'database.php';
+
+include 'database.php';
 
 $date=@$_REQUEST['data'];
 if(!isset($date)){
